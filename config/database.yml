@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: hot100_production
-  username: hot100
-  password: <%= ENV["HOT100_DATABASE_PASSWORD"] %>
+  username: deploy
+  password: <%= Rails.application.credentials.dig(Rails.env.to_sym, :pg_password) %>
