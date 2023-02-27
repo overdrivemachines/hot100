@@ -23,6 +23,7 @@ end
 
 group :development do
   gem "web-console"
+  gem "rails-erd" # ERD diagram
   gem "annotate" # Annotate models and routes
   gem "chusaku", require: false # Annotate controllers
   gem "faker" # Fake sample data
