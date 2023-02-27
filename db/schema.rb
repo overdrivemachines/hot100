@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_27_034645) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_27_054816) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "album", default: "Unknown", null: false
+    t.string "album_image_url", default: "https://img.freepik.com/free-vector/dark-wavy-shape-with-shinny-light-background_1409-1923.jpg?w=1380", null: false
+    t.string "spotify_id", default: "", null: false
+    t.string "name", default: "Song Name", null: false
+    t.string "preview_url"
+    t.string "youtube_url", default: "https://www.youtube.com/watch?v=u31qwQUeGuM", null: false
+    t.integer "youtube_likes_count", default: 0, null: false
+    t.integer "youtube_views_count", default: 0, null: false
+    t.integer "rank", default: -1, null: false
+    t.integer "age_top10", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spotify_id"], name: "index_tracks_on_spotify_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

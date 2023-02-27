@@ -1,0 +1,67 @@
+<%= form_with(model: track) do |form| %>
+  <% if track.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(track.errors.count, "error") %> prohibited this track from being saved:</h2>
+
+      <ul>
+        <% track.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :album, style: "display: block" %>
+    <%= form.text_field :album %>
+  </div>
+
+  <div>
+    <%= form.label :album_image_url, style: "display: block" %>
+    <%= form.text_field :album_image_url %>
+  </div>
+
+  <div>
+    <%= form.label :spotify_id, style: "display: block" %>
+    <%= form.text_field :spotify_id %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :preview_url, style: "display: block" %>
+    <%= form.text_field :preview_url %>
+  </div>
+
+  <div>
+    <%= form.label :youtube_url, style: "display: block" %>
+    <%= form.text_field :youtube_url %>
+  </div>
+
+  <div>
+    <%= form.label :youtube_likes_count, style: "display: block" %>
+    <%= form.number_field :youtube_likes_count %>
+  </div>
+
+  <div>
+    <%= form.label :youtube_views_count, style: "display: block" %>
+    <%= form.number_field :youtube_views_count %>
+  </div>
+
+  <div>
+    <%= form.label :rank, style: "display: block" %>
+    <%= form.number_field :rank %>
+  </div>
+
+  <div>
+    <%= form.label :age_top_10, style: "display: block" %>
+    <%= form.number_field :age_top_10 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
