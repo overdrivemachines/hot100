@@ -21,6 +21,7 @@
 #  index_tracks_on_spotify_id  (spotify_id) UNIQUE
 #
 class Track < ApplicationRecord
-  has_many :artists, through: :artist_tracks, dependant: :destroy
-  has_many :likes, dependant: :destroy
+  has_many :artist_tracks
+  has_many :artists, through: :artist_tracks, dependent: :destroy
+  has_many :likes, dependent: :destroy
 end

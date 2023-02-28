@@ -13,5 +13,6 @@
 #  index_artists_on_spotify_id  (spotify_id) UNIQUE
 #
 class Artist < ApplicationRecord
-  has_many :tracks, through: :artist_tracks, dependant: :destroy
+  has_many :artist_tracks
+  has_many :tracks, through: :artist_tracks, dependent: :destroy
 end
